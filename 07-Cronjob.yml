@@ -1,0 +1,15 @@
+---
+- name: Run Cronjob
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Run a Cronjob
+    cron:
+      name: Run a Script
+      minute: 00
+      hour: 17
+      day: 1
+      month: "*"
+      weekday: "*"
+      job: /tmp/script/test.sh
