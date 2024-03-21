@@ -3,7 +3,7 @@
   hosts: all
   become: true
 
-  taska:
+  tasks:
   - name: Ping the remote server
     ping: 
   - name: Print the message
