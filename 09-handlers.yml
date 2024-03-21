@@ -1,0 +1,19 @@
+---
+- name: Handlers example
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Enable service in firewalld
+      firewalld:
+        port: 80/tcp
+        permanent: true
+        state: enabled
+      notify: 
+        - Reload firewalld
+
+  handlers:
+  - name: Reload firewalld
+    service:
+      name: firewalld
+      state: reloaded
