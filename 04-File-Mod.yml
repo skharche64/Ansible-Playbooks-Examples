@@ -1,0 +1,15 @@
+---
+- name: File Module
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Creating a file
+    file:
+      path: /tmp/newfile.txt
+      state: touch
+
+  - name: Creating a Folder
+    file:
+      path: /tmp/myfolder
+      state: directory
