@@ -1,0 +1,17 @@
+---
+- name: Condition
+  hosts: all
+  become: true
+
+  tasks:
+  - name: httpd installation
+    yum:
+      name: httpd
+      state: present
+    when: ansibel_os_family == "RedHat"
+  
+  - name: Install apache2 on ubuntu
+    apt:
+      name: apache2
+      state: presnet
+    when: ansible_os_family == "Debian"
