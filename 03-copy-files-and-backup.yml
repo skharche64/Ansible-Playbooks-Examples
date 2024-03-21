@@ -1,0 +1,11 @@
+---
+- name: Copying Files
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Copying Files
+    copy:
+      src: /root/myfile.txt
+      dest: /tmp/
+      backup: true
