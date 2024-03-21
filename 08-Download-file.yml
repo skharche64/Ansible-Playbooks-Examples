@@ -1,0 +1,10 @@
+---
+- name: Download file from internet
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Download File
+    get_url:
+      url: https://www.python.org/ftp/python/3.12.2/python-3.12.2-macos11.pkg
+      dest: /tmp/script/
