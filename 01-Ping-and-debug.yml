@@ -1,0 +1,10 @@
+---
+- name: Ping and debug
+  hosts: all
+  become: true
+
+  taska:
+  - name: Ping the remote server
+    ping: 
+  - name: Print the message
+    debug: msg="Connectivity Okay"  
